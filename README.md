@@ -36,4 +36,6 @@ Or refer to the official [installation documentation](http://docs.ansible.com/an
 
 ## Usage
 
-TODO
+```
+ansible-pull -o -C develop -d /var/projects/ansible-pull-update -i /var/projects/ansible-pull-update/inventory -U git://github.com/jschulthess/ansible-pull-update >> /var/log/ansible-pull-update.log 2>&1
+```
