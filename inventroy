@@ -1,0 +1,2 @@
+[local]
+localhost ansible_connection=local ansible_become_user=root ansible_become=true
