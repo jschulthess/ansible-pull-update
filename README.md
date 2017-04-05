@@ -39,7 +39,7 @@ Or refer to the official [installation documentation](http://docs.ansible.com/an
 The ansible-pull command can be run in one of two ways:
 
 1. manual usage
-2. unatended 
+2. unattended
 
 ### Manual Usage 
 
@@ -55,9 +55,9 @@ sudo ansible-pull -o -C ${checkout} -d ${directory} -i ${directory}/inventory -U
   2>&1 | sudo tee -a ${logfile}
 ```
 
-### Unatended Usage
+### Unattended Usage
 
-To make the playbook run unatended at regular intervals the above command is typically installed as a cron job.
+To make the playbook run unattended at regular intervals the above command is typically installed as a cron job.
 For convenience a playbook "ansible-pull-setup.yml" has been included which can be used to install the cron job and log rotation.
 
 Note: before running the playbook to install make sure to set the reposigory URL by replacing the string SUPPLY_YOUR_OWN_GIT_URL_HERE in the playbook.
