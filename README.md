@@ -38,7 +38,7 @@ Or refer to the official [installation documentation](http://docs.ansible.com/an
 
 The ansible-pull command can be run in one of two ways:
 
-1. manual usage
+1. manually
 2. unattended
 
 ### Manual Usage 
