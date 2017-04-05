@@ -37,5 +37,11 @@ Or refer to the official [installation documentation](http://docs.ansible.com/an
 ## Usage
 
 ```
-ansible-pull -o -C develop -d /var/projects/ansible-pull-update -i /var/projects/ansible-pull-update/inventory -U git://github.com/jschulthess/ansible-pull-update >> /var/log/ansible-pull-update.log 2>&1
+url='git@github.com:jschulthess/ansible-pull-update.git' # URL of the playbook repository
+checkout='develop'                                        # branch/tag/commit to checkout
+directory='/var/projects/ansible-pull-update'       # directory to checkout repository to
+logfile='/var/log/ansible-pull-update.log'                        # where to put the logs
+
+sudo ansible-pull -o -C ${checkout} -d ${directory} -i ${directory}/inventory -U ${url} \
+  2>&1 | sudo tee -a ${logfile}
 ```
