@@ -3,7 +3,7 @@ Update your system via ansible-pull
 
 ## Introduction
 
-This repository contains playbooks to update a Linux system using ansible-pull.
+This repository contains playbooks to update a Linux system using ansible-pull. It is intended as a useful example of running Ansible in _pull_ mode.
 
 At present it supports the following OS variants:
 
@@ -68,3 +68,4 @@ To install, simply run the playbook on the host to be ansible-pull enabled.
 ansible-playbook ansible-pull-setup.yml
 ```
 
+The playbook creates a cron entry which runs _ansible-pull_ every 15 minutes. Check the logfine and verify that an attempt to update the system is indeed done regularly.
