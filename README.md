@@ -3,7 +3,7 @@ Update your system via ansible-pull
 
 ## Introduction
 
-This repository contains playbooks to update a Linux system using ansible-pull. It is intended as a useful example of running Ansible in _pull_ mode.
+This repository contains playbooks to update a Linux system using ansible-pull. It is intended as a simple yet reasonably useful example of running Ansible in _pull_ mode.
 
 At present it supports the following OS variants:
 
