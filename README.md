@@ -74,3 +74,17 @@ The playbook creates a cron entry which runs _ansible-pull_ every 15 minutes. Ch
 
 The roles subdirectory contains a role "provision_ansible_pull_update" which can be used to integrate the ansible-pull execution into a provisioning system like ['Foreman/Katello'](https://theforeman.org/).  
 This allows to apply ansible-pull as a simple role on any host in Foreman using the ['foreman_ansible'](https://github.com/theforeman/foreman_ansible) plugin.  
+
+The role contains the following variables that can be overridden:
+
+  * schedule: Cron schedule. Default: ```'*/15 * * * *'```  
+
+  * cron_user: User to run ansible-pull as from cron. Default: "root"  
+
+  * logfile: File that ansible will use for logs. Default: /var/log/ansible-pull.log  
+
+  * workdir: Directory to where repository will be cloned. Default: /var/lib/ansible/local  
+
+  * repo_url: Repository to check out -- YOU MUST CHANGE THIS  
+              The repo must contain a local.yml file at top level  
+
