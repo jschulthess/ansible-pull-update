@@ -68,3 +68,7 @@ To install, simply run the playbook on the host to be ansible-pull enabled.
 ansible-playbook ansible-pull-setup.yml
 ```
 
+### Integration
+
+The roles subdirectory contains a role "provision_ansible_pull_update" which can be used to integrate the ansible-pull execution into a provisioning system like ['Foreman/Katello'](https://theforeman.org/).  
+This allows to apply ansible-pull as a simple role on any host in Foreman using the ['foreman_ansible'](https://github.com/theforeman/foreman_ansible) plugin.  

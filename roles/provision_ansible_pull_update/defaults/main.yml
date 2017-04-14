@@ -1,0 +1,18 @@
+---
+# defaults file for provision_ansible_pull_update
+# schedule is fed directly to cron
+schedule: '*/15 * * * *'
+
+# User to run ansible-pull as from cron
+cron_user: root
+
+# File that ansible will use for logs
+logfile: /var/log/ansible-pull.log
+
+# Directory to where repository will be cloned
+workdir: /var/lib/ansible/local
+
+# Repository to check out -- YOU MUST CHANGE THIS
+# repo must contain a local.yml file at top level
+#repo_url: https://github.com/jschulthess/ansible-pull-update.git
+repo_url: SUPPLY_YOUR_OWN_GIT_URL_HERE
