@@ -9,16 +9,16 @@
   file:
     path: "{{workdir}}"
     state: directory
-    owner: root
-    group: root
+    owner: "{{ cron_user }}"
+    group: "{{ cron_user }}"
     mode: 0751
 
 - name: Copy ansible inventory file to client
   copy:
     src: /etc/ansible/hosts
     dest: /etc/ansible/hosts
-    owner: root
-    group: root
+    owner: "{{ cron_user }}"
+    group: "{{ cron_user }}"
     mode: 0644
 
 - name: install dependencies (fedora)
@@ -37,14 +37,14 @@
   template:
     src: templates/etc_cron.d_ansible-pull.j2
     dest: /etc/cron.d/ansible-pull
-    owner: root
-    group: root
+    owner: "{{ cron_user }}"
+    group: "{{ cron_user }}"
     mode: 0644
 
 - name: Create logrotate entry for ansible-pull.log
   template:
     src: templates/etc_logrotate.d_ansible-pull.j2
     dest: /etc/logrotate.d/ansible-pull
-    owner: root
-    group: root
+    owner: "{{ cron_user }}"
+    group: "{{ cron_user }}"
     mode: 0644
