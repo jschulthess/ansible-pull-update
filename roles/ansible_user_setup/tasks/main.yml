@@ -1,0 +1,21 @@
+---
+- name: install ops user
+  user:
+    name: "{{ ansible_user_name }}"
+    state: present
+    shell: /bin/bash
+
+- name: create sudo rules for ansible user
+  copy:
+    content: "{{ ansible_user_name }} ALL=(ALL:ALL) NOPASSWD:ALL"
+    dest: /etc/sudoers.d/10_{{ ansible_user_name }}
+    owner: root
+    group: root
+    mode: 0644
+
+- name: add ansible control node public key
+  authorized_key:
+    user: "{{ ansible_user_name }}"
+    state: present
+    key: "{{ lookup('file', 'files/foreman-proxy.pub') }}"
+

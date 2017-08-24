@@ -88,3 +88,4 @@ The role contains the following variables that can be overridden:
   * repo_url: Repository to check out -- YOU MUST CHANGE THIS  
               The repo must contain a local.yml file at top level  
 
+A second role included in the sub-dicrectory roles is "ansible_user_setup". It is intended to be imported into foreman and applied to a newly provisioned host to add an Ansible user (default: ops) allow devops for the provisioned host to be done using Ansible through the ansible_foreman plugin.
