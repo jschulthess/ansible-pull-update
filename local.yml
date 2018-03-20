@@ -1,9 +1,9 @@
 ---
-- hosts: all
+- hosts: local
   become: true
 
   tasks:
-    - name: systme info
+    - name: systmem info
       debug:
         msg: "OS family: {{ ansible_os_family }}, package manager: {{ ansible_pkg_mgr }}"
 
